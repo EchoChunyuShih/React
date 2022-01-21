@@ -1,11 +1,104 @@
-# Task Traker 
+# Task Traker
 
 This project is a react practice by [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
 
-## npm used
+## npm
 
-React Icons `npm install react-icons`.\
+### react-icon
+
+`npm install react-icons`
+
+In the js file you wish to use the icon
+`import { FaTimes } from "react-icons/fa";`
+
 More details at [react-icon](https://www.npmjs.com/package/react-icons)
+
+### json-server
+
+` npm i json-server`
+
+1. set port `"server": "json-server --watch db.json --port 5000"`
+2. `npm run server` you will find the following message :
+   > Resources
+   > http://localhost:5000/tasks
+   >
+   > Home
+   > http://localhost:5000
+3. edit db.json: move data from App.js (remember in json format, key and value should both be wrapped in "", and no comma at the end of each object) to db.json
+
+   - for example:
+
+     - in App.js
+
+     ```
+     tasks=[{
+         id: 1,
+        text: "Dentists Appointment",
+         day: "Jan 13 at 2:30pm",
+         reminder: true,
+       }]
+     ```
+
+     - whereas in db.json
+
+     ```
+     {
+     "tasks": [
+       {
+         "id": 1,
+         "text": "Dentists Appointment",
+         "day": "Jan 13 at 2:30pm",
+         "reminder": true
+       }
+     ```
+
+### react-icon
+
+`npm install react-icons`
+
+In the js file you wish to use the icon
+`import { FaTimes } from "react-icons/fa";`
+
+More details at [react-icon](https://www.npmjs.com/package/react-icons)
+
+### json-server
+
+` npm i json-server`
+
+1. set port `"server": "json-server --watch db.json --port 5000"`
+2. `npm run server` you will find the following message :
+   > Resources
+   > http://localhost:5000/tasks
+   >
+   > Home
+   > http://localhost:5000
+3. edit db.json: move data from App.js (remember in json format, key and value should both be wrapped in "", and no comma at the end of each object) to db.json
+
+   - for example:
+
+     - in App.js
+
+     ```
+     tasks=[{
+         id: 1,
+        text: "Dentists Appointment",
+         day: "Jan 13 at 2:30pm",
+         reminder: true,
+       }]
+     ```
+
+     - whereas in db.json
+
+     ```
+     {
+     "tasks": [
+       {
+         "id": 1,
+         "text": "Dentists Appointment",
+         "day": "Jan 13 at 2:30pm",
+         "reminder": true
+       }
+     ```
 
 ## Available Scripts
 
