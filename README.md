@@ -2,6 +2,11 @@
 
 This project is a react practice by [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
 
+## npm used
+
+React Icons `npm install react-icons`.\
+More details at [react-icon](https://www.npmjs.com/package/react-icons)
+
 ## Available Scripts
 
 In the project directory, you can run:
