@@ -17,14 +17,15 @@ More details at [react-icon](https://www.npmjs.com/package/react-icons)
 
 ` npm i json-server`
 
-1. set port `"server": "json-server --watch db.json --port 5000"`
-2. `npm run server` you will find the following message :
+1. `json-server --watch db.json` to start JSON Server
+2. set port `"server": "json-server --watch db.json --port 5000"` in package.json
+3. `npm run server` you will find the following message :
    > Resources
    > http://localhost:5000/tasks
    >
    > Home
    > http://localhost:5000
-3. edit db.json: move data from App.js (remember in json format, key and value should both be wrapped in "", and no comma at the end of each object) to db.json
+4. edit db.json: move data from App.js (remember in json format, key and value should both be wrapped in "", and no comma at the end of each object) to db.json
 
    - for example:
 
