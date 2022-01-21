@@ -16,7 +16,7 @@ function App() {
     getTasks();
   }, []);
 
-  //fetchTasks
+  //FETCH TASKS
   const fetchTasks = async () => {
     const response = await fetch("http://localhost:5000/tasks");
     const data = await response.json();
@@ -24,25 +24,61 @@ function App() {
     return data;
   };
 
-  //add task
-  const addTask = (task) => {
-    const ids = tasks.map((v, i) => v.id);
-    const newId = Math.max(...ids) + 1;
-    const newTask = { newId, ...task };
-    setTasks([...tasks, newTask]);
+  //FETCH TASK
+  const fetchTask = async (id) => {
+    const response = await fetch(`http://localhost:5000/tasks/${id}`);
+    const data = await response.json();
+
+    return data;
   };
-  //delete task
-  const deleteTask = (id) => {
+
+  //ADD TASK
+  const addTask = async (task) => {
+    const response = await fetch("http://localhost:5000/tasks", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(task),
+    });
+    const data = await response.json();
+    setTasks([...tasks, data]);
+
+    // const ids = tasks.map((v, i) => v.id);
+    // const newId = Math.max(...ids) + 1;
+    // const newTask = { newId, ...task };
+    // setTasks([...tasks, newTask]);
+  };
+
+  //DELETE TASK
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "DELETE",
+    });
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  //toggle reminder
-  const toggleReminder = (id) =>
+  //TOGGLE REMINDER
+  const toggleReminder = async (id) => {
+    const taskToToggle = await fetchTask(id);
+    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+
+    const response = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updTask),
+    });
+
+    const data = await response.json();
+
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
+        task.id === id ? { ...task, reminder: data.reminder } : task
       )
     );
+  };
 
   return (
     <div className="container">
