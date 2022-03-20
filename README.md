@@ -1,6 +1,6 @@
-# Task Traker
+<h1 align="center"> Task Traker </h1>
 
-This project is a react practice by [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
+
 
 ## npm
 
@@ -53,13 +53,8 @@ More details at [react-icon](https://www.npmjs.com/package/react-icons)
          "reminder": true
        }
      ```
-     
-### 3. react-router-dom
 
 
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -67,3 +62,4 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
+> This project is credited to [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
